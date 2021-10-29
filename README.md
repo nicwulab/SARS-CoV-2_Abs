@@ -38,4 +38,4 @@ manuualy intall amino acid database from imgt
 
 run PyIR for igBlast
 
-see [_PyIr_.py](./code/_PyIR.py)
+see [PyIr.py](./code/_PyIR_.py)
