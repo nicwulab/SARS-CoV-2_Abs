@@ -1,4 +1,4 @@
-# SARS-CoV-Abs
+# SARS-CoV-2 Antibodies
 
 
 ## Dependencies ##
