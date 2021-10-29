@@ -1,5 +1,5 @@
 # Title     : to plot basic statistics of Ab table
-# Objective : 
+# Objective :
 # Created by: yiquan
 # Created on: 10/7/21
 library(ggplot2)
