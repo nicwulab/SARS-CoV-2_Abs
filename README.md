@@ -88,7 +88,12 @@ igblastn -query result/test.fasta
 ## Analyzing VDJ gene usage and IGHV/IGK(L)V pairing
 1. Extract VDJ gene usage   
 ```python3 code/VDJgene_freq_analysis.py```   
-  - 
+    - Input file:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+    - Output files:
+      - [./result/Dgene_freq.tsv](./result/Dgene_freq.tsv)
+      - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
+      - [./result/LVgene_freq.tsv](./result/LVgene_freq.tsv)
 
 ## CDR H3 clustering analysis
 
@@ -159,21 +164,45 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
   - [./code/CoV_Encoder/result](./code/CoV_Encoder/result)
 
 ## Plotting
-1. Plot CDR H3 cluster size   
+1. Plot VDJ gene usage   
+```Rscript code/Plot_VDJgene_Freq.R```
+    - Input files:
+      - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
+      - [./result/LVgene_freq.tsv](./result/LVgene_freq.tsv)
+      - [./result/Dgene_freq.tsv](./result/Dgene_freq.tsv)
+      - [./data/HV_Repertoire_freq.xlsx][./data/HV_Repertoire_freq.xlsx]
+      - [./data/LV_Repertoire_freq.xlsx][./data/LV_Repertoire_freq.xlsx]
+      - [./data/D_Repertoire_freq.xlsx][./data/D_Repertoire_freq.xlsx]
+    - Output files:
+      - [./graph/HV_gene_usage.png](./graph/HV_gene_usage.png)
+      - [./graph/LV_gene_usage.png](./graph/LV_gene_usage.png)
+      - [./graph/D_gene_usage.png](./graph/D_gene_usage.png)
+
+
+2. plot IGHV/IGK(L)V pairing frequency
+```Rscript code/Plot_point_heatmap.R```
+    - Input files:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+      - [./data/HV_Repertoire_freq.xlsx][./data/HV_Repertoire_freq.xlsx]
+      - [./data/LV_Repertoire_freq.xlsx][./data/LV_Repertoire_freq.xlsx]
+    - Output file:
+      - [./graph/HLV_epitope_heatmap.png](./graph/HLV_epitope_heatmap.png)
+
+3. Plot CDR H3 cluster size   
 ```Rscript code/plot_CDRH3_cluster_summary.R```   
     - Input file:
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
     - Output file:
       - [./graph/CDRH3_cluster_size.png](./graph/CDRH3_cluster_size.png)
 
-2. Generate sequence logo for different CDR H3 clusters   
+4. Generate sequence logo for different CDR H3 clusters   
 ```python3 code/CDRH3_seqlogo.py```   
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
     - Output files:
       - ./CDRH3_seqlogo/*.png
 
-3. Plot analysis results for IGHD1-26-encoded S2 antibodies
+5. Plot analysis results for IGHD1-26-encoded S2 antibodies
 ```Rscript code/plot_IGHD1-26_analysis.R```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -184,7 +213,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/HJgenes_pie_other.png](./graph/HJgenes_pie_other.png)
       - [./graph/S2_IGHD1-26_CDRH3_len.png](./graph/S2_IGHD1-26_CDRH3_len.png)
  
-4. Plot SHM   
+6. Plot SHM   
 ```Rscript code/plot_SHM.R```   
     - Input file:
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
@@ -192,7 +221,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/SHM_HC_frequency.png](./graph/SHM_HC_frequency.png)
       - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
 
-5. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
+7. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
 ```Rscript code/Plot_basic_stat.R```
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
