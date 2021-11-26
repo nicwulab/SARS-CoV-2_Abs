@@ -65,18 +65,18 @@ Database set up in pyir library directory
 1. Run local igblast on kabat numbering system
 
 ```
-    igblastn -query result/test.fasta 
-    -germline_db_V imgt_database/human_nuc/IGV.fasta 
-    -germline_db_J imgt_database/human_nuc/IGJ.fasta 
-    -germline_db_D imgt_database/human_nuc/IGD.fasta 
-    -organism human -domain_system kabat 
-    -auxiliary_data imgt_database/optional_file/human_gl.aux 
-    -out result/igblast_output
+igblastn -query result/test.fasta
+  -germline_db_V imgt_database/human_nuc/IGV.fasta 
+  -germline_db_J imgt_database/human_nuc/IGJ.fasta 
+  -germline_db_D imgt_database/human_nuc/IGD.fasta 
+  -organism human -domain_system kabat 
+  -auxiliary_data imgt_database/optional_file/human_gl.aux 
+  -out result/igblast_output
 ```
 
 2. Parse igblast output
 
-Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
+  Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
 
 
 ## Baseline VDJ setup
