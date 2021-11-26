@@ -56,7 +56,7 @@ Database set up in pyir library directory
 
 ```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```
 
-- Run PyIR for igBlast
+5. Run PyIR for igBlast
 
   see [PyIR.py](./code/_PyIR_.py)
 
