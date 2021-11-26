@@ -188,3 +188,11 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
     - Output files:
       - [./graph/SHM_HC_frequency.png](./graph/SHM_HC_frequency.png)
       - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
+
+5. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
+```Rscript code/Plot_basic_stat.R```
+    - Input file:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+    - Output file:
+      - [./RBD_neutralization_sactter](./RBD_neutralization_sactter)
+
