@@ -5,11 +5,11 @@ reveals recurring molecular features"](https:xxx)
 ## Contents
 
 [Local igblast setup](#local-igblast-setup)   
-[Analyzing VDJ gene usage and IGHV/IGK(L)V pairing](#Analyzing VDJ gene usage and IGHV/IGK(L)V pairing)
+[Analyzing VDJ gene usage and V gene pairing](#Analyzing VDJ gene usage and V gene pairing)   
 [Baseline VDJ setup](#baseline-vdj-setup)   
 [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
 [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
-[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)
+[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
 [Plotting](#plotting)  
 
 
@@ -86,7 +86,7 @@ igblastn -query result/test.fasta
 
 2. [Cal_repertoire_freq.py](./code/Cal_repertoire_freq.py) is used to establish the baseline germline usage frequency
 
-## Analyzing VDJ gene usage and IGHV/IGK(L)V pairing
+## Analyzing VDJ gene usage and V gene pairing
 1. Extract VDJ gene usage   
 ```python3 code/VDJgene_freq_analysis.py```   
     - Input file:
