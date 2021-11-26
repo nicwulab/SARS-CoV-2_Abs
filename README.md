@@ -149,6 +149,12 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
 
 - see [Epitope_classification.ipynb](./Code/CoV_Encoder/Epitope_classification.ipynb) for detail
 
+-  Input files:
+  - [./code/CoV_Encoder/data/S-HA_Abs_v6_binary.xlsx](./code/CoV_Encoder/data/S-HA_Abs_v6_binary.xlsx)  
+  - [./code/CoV_Encoder/data/Momsen_Abs.xlsx](./code/CoV_Encoder/data/Momsen_Abs.xlsx)
+-  Output files: 
+  - [./code/CoV_Encoder/result](./code/CoV_Encoder/result)
+  - 
 ## Plotting
 1. Plot CDR H3 cluster size   
 ```Rscript code/plot_CDRH3_cluster_summary.R```   
