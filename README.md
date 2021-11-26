@@ -87,16 +87,13 @@ igblastn -query result/test.fasta
 
 ## Analyzing VDJ gene usage and IGHV/IGK(L)V pairing
 1. Extract VDJ gene usage   
-```
-python3 code/VDJgene_freq_analysis.py
-```
+```python3 code/VDJgene_freq_analysis.py```   
+  - 
 
 ## CDR H3 clustering analysis
 
 1. Extract information from the antibody dataset for downstream analyses   
-```
-python3 code/parse_Ab_table.py
-```   
+```python3 code/parse_Ab_table.py```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output files:
