@@ -170,7 +170,18 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
     - Output files:
       - ./CDRH3_seqlogo/*.png
 
-3. Plot SHM   
+3. Plot analysis results for IGHD1-26-encoded S2 antibodies
+```Rscript code/plot_IGHD1-26_analysis.R```   
+    - Input file:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+    - Output file:
+      - [./graph/S2_IGHD1-26_HVgenes.png](./graph/S2_IGHD1-26_HVgenes.png)
+      - [./graph/S2_IGHD1-26_LVgenes.png](./graph/S2_IGHD1-26_LVgenes.png)
+      - [./graph/HJgenes_pie_S2_IGHD1-26.png](./graph/HJgenes_pie_S2_IGHD1-26.png)
+      - [./graph/HJgenes_pie_other.png](./graph/HJgenes_pie_other.png)
+      - [./graph/S2_IGHD1-26_CDRH3_len.png](./graph/S2_IGHD1-26_CDRH3_len.png)
+ 
+4. Plot SHM   
 ```Rscript code/plot_SHM.R```   
     - Input file:
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
