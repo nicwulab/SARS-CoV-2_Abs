@@ -14,8 +14,10 @@ reveals recurring molecular features"](https:xxx)
 
 ## Input files 
 
-* [data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx): List of antibodies collected from publications and patents
-* [HV_Repertoire_freq.xlsx](./HV_Repertoire_freq.xlsx): Baseline IGHV usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
+* [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx): List of antibodies collected from publications and patents
+* [./data/HV_Repertoire_freq.xlsx](./data/HV_Repertoire_freq.xlsx): Baseline IGHV usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
+* [./data/LV_Repertoire_freq.xlsx](./data/LV_Repertoire_freq.xlsx): Baseline IGK(L)V usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
+* [./data/D_Repertoire_freq.xlsx](./data/D_Repertoire_freq.xlsx): Baseline IGHD usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
 
 ## Dependencies ##
 * python=3.9
