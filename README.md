@@ -16,7 +16,7 @@ Install everything dependencies by conda:
 ```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython igblast```
 
 
-### Local igblast set up
+## Local igblast set up
 
 ```conda activate Abs(for Mac)```
 
@@ -46,13 +46,13 @@ database set up in pyir library directory
 
 - run local igblast and CDR parser
 
-### Baseline VDJ setup
+## Baseline VDJ setup
 
-### CDR H3 clustering analysis
+## CDR H3 clustering analysis
 
-### Identification of recurring somatic hypermutation (SHM)![image](https://user-images.githubusercontent.com/53042063/143530364-0e7c69e1-f61d-40a7-97b1-464df17dedbf.png)
+## Identification of recurring somatic hypermutation (SHM)
 
-### Deep learning model for antigen identification
+## Deep learning model for antigen identification
 
-### Plotting
+## Plotting
 
