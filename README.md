@@ -19,21 +19,14 @@ reveals recurring molecular features"](https:xxx)
 * [BioPython](https://github.com/biopython/biopython)
 * [Pandas](https://pandas.pydata.org/)
 * [Openpyxl](https://openpyxl.readthedocs.io/en/stable/)
-<<<<<<< HEAD
 * [Distance](https://pypi.org/project/Distance/)
 * [ANARCI](https://github.com/oxpig/ANARCI)
 * [Logomaker](https://logomaker.readthedocs.io/en/latest/)
-=======
->>>>>>> b14f9cb19b4a669751ced67005b6988d27ad4d63
 
 ## Dependencies Installation ##
 Install everything dependencies by conda:
 
-<<<<<<< HEAD
 ```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance logomaker igblast anarci```
-=======
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl igblast```  
->>>>>>> b14f9cb19b4a669751ced67005b6988d27ad4d63
 
 ## Local igblast setup
 
