@@ -5,7 +5,7 @@ reveals recurring molecular features"](https:xxx)
 ## Contents
 
 [Local igblast setup](#local-igblast-setup)   
-[Analyzing VDJ gene usage and V gene pairing](#Analyzing VDJ gene usage and V gene pairing)   
+[Analyzing VDJ gene usage and V gene pairing](#Analyzing-VDJ-gene-usage-and-V-gene-pairing)   
 [Baseline VDJ setup](#baseline-vdj-setup)   
 [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
 [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
@@ -35,7 +35,7 @@ Before analysis, do:
 
 ```conda activate Abs```
 
-### PyIR: An IgBLAST wrapper and parser[https://github.com/crowelab/PyIR]
+### PyIR: An IgBLAST wrapper and parser
 
 ```pip3 install crowelab_pyir```
 
