@@ -61,7 +61,8 @@ Database set up in pyir library directory
 
 4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence). For example:
 
-```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```
+```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```   
+
 ```makeblastdb -parse_seqids -dbtype nucl -in imgt_database/human_nuc/IGV.fasta```
 
 5. Run PyIR for igBlast
@@ -194,7 +195,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/LV_gene_usage.png](./graph/LV_gene_usage.png)
       - [./graph/D_gene_usage.png](./graph/D_gene_usage.png)
 
-3. plot IGHV/IGK(L)V pairing frequency
+3. plot IGHV/IGK(L)V pairing frequency   
 ```Rscript code/Plot_point_heatmap.R```   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -224,7 +225,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
     - Output file:
       - [./graph/Vgenes_cluster7.png](./graph/Vgenes_cluster7.png)
 
-7. Plot analysis results for IGHD1-26-encoded S2 antibodies
+7. Plot analysis results for IGHD1-26-encoded S2 antibodies   
 ```Rscript code/plot_IGHD1-26_analysis.R```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -243,8 +244,8 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/SHM_HC_frequency.png](./graph/SHM_HC_frequency.png)
       - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
 
-9. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
-```Rscript code/Plot_basic_stat.R```
+9. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair   
+```Rscript code/Plot_basic_stat.R```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output file:
