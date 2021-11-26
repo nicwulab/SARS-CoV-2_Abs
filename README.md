@@ -54,7 +54,8 @@ Database set up in pyir library directory
 
 ## CDR H3 clustering analysis
 
-1. Extract information from the antibody dataset for downstream analyses   
+1. Extract information from the antibody dataset for downstream analyses
+
 ```python3 code/parse_Ab_table.py```
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -63,14 +64,16 @@ Database set up in pyir library directory
       - [./result/CDRH3.tsv](./result/CDRH3.tsv)
       - [./result/refs.txt](./result/refs.txt)
 
-2. Clustering CDR H3 sequences   
+2. Clustering CDR H3 sequences
+
 ```python3 code/CDRH3_clustering_optimal.py```
     - Input file:
       - [./result/CDRH3.tsv](./result/CDRH3.tsv)
     - Output file:
       - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
 
-3. Analyzing CDR H3 clustering results   
+3. Analyzing CDR H3 clustering results
+
 ```python3 code/analyze_CDRH3_cluster.py```
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -84,7 +87,8 @@ Database set up in pyir library directory
 ## Deep learning model for antigen identification
 
 ## Plotting
-1. Plot CDR H3 cluster size   
+1. Plot CDR H3 cluster size
+
 ```Rscript code/plot_CDRH3_cluster_summary.R```
     - Input file:
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
