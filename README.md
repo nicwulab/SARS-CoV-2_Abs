@@ -12,11 +12,12 @@ reveals recurring molecular features"
 * [BioPython](https://github.com/biopython/biopython)
 * [Pandas](https://pandas.pydata.org/)
 * [Openpyxl](https://openpyxl.readthedocs.io/en/stable/)
+* [Distance](https://pypi.org/project/Distance/)
 
 ## Installation ##
 Install everything dependencies by conda:
 
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl igblast```
+```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance igblast```
 
 
 ## Local igblast set up
@@ -56,15 +57,38 @@ Database set up in pyir library directory
 1. Extract information from the antibody dataset for downstream analyses
 ```python3 code/parse_Ab_table.py```
     - Input file:
-      - [./data/SARS-CoV-2-Abs.xls](./data/SARS-CoV-2-Abs.xls)
+      - [./data/SARS-CoV-2-Abs.xls](./data/SARS-CoV-2-Abs.xlsx)
     - Output files:
       - [./Fasta/SARS-CoV-2-Ab.pep](./Fasta/SARS-CoV-2-Ab.pep)
       - [./result/CDRH3.tsv](./result/CDRH3.tsv)
-      - [./result/refs.txt]
+      - [./result/refs.txt](./result/refs.txt)
+
+2. Clustering CDR H3 sequences
+```python3 code/CDRH3_clustering_optimal.py```
+    - Input file:
+      - [./result/CDRH3.tsv](./result/CDRH3.tsv)
+    - Output file:
+      - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
+
+3. Analyzing CDR H3 clustering results
+```python3 code/analyze_CDRH3_cluster.py```
+    - Input files:
+      - [./data/SARS-CoV-2-Abs.xls](./data/SARS-CoV-2-Abs.xlsx)
+      - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
+    - Output file:
+      - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
+      - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
 
 ## Identification of recurring somatic hypermutation (SHM)
 
 ## Deep learning model for antigen identification
 
 ## Plotting
+1. Plot CDR H3 cluster size
+```Rscript code/plot_CDRH3_cluster_summary.R```
+    - Input file:
+      - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
+    - Output file:
+      - [./graph/CDRH3_cluster_size.png](./graph/CDRH3_cluster_size.png)
+    
 

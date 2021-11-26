@@ -8,7 +8,6 @@ from collections import defaultdict, Counter
 
 def extract_basic_info(filename, outfile_CDRH3, outfile_pep, outfile_ref):
   aas = ["A", "R", "N", "D", "C", "E", "Q", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V"]
-  out_tsv = 'data/'+filename.rsplit('/')[1].rsplit('.')[0]+'.tsv'
   print ('reading: %s' % filename)
   print ('writing: %s' % outfile_CDRH3)
   print ('writing: %s' % outfile_pep)
