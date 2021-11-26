@@ -5,6 +5,7 @@ reveals recurring molecular features"](https:xxx)
 ## Contents
 
 [Local igblast setup](#local-igblast-setup)   
+[Analyzing VDJ gene usage and IGHV/IGK(L)V pairing](#Analyzing VDJ gene usage and IGHV/IGK(L)V pairing)
 [Baseline VDJ setup](#baseline-vdj-setup)   
 [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
 [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
@@ -165,7 +166,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
 
 ## Plotting
 1. Plot VDJ gene usage   
-```Rscript code/Plot_VDJgene_Freq.R```
+```Rscript code/Plot_VDJgene_Freq.R```   
     - Input files:
       - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
       - [./result/LVgene_freq.tsv](./result/LVgene_freq.tsv)
@@ -178,9 +179,8 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/LV_gene_usage.png](./graph/LV_gene_usage.png)
       - [./graph/D_gene_usage.png](./graph/D_gene_usage.png)
 
-
 2. plot IGHV/IGK(L)V pairing frequency
-```Rscript code/Plot_point_heatmap.R```
+```Rscript code/Plot_point_heatmap.R```   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
       - [./data/HV_Repertoire_freq.xlsx][./data/HV_Repertoire_freq.xlsx]
