@@ -13,11 +13,13 @@ reveals recurring molecular features"
 * [Pandas](https://pandas.pydata.org/)
 * [Openpyxl](https://openpyxl.readthedocs.io/en/stable/)
 * [Distance](https://pypi.org/project/Distance/)
+* [ANARCI](https://github.com/oxpig/ANARCI)
+* [Logomaker](https://logomaker.readthedocs.io/en/latest/)
 
 ## Installation ##
 Install everything dependencies by conda:
 
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance igblast```
+```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance logomaker igblast anarci```
 
 
 ## Local igblast set up
@@ -80,6 +82,33 @@ Database set up in pyir library directory
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
 
 ## Identification of recurring somatic hypermutation (SHM)
+1. Numbering SARS2 antibody sequences according to Kabat numbering   
+```ANARCI --scheme kabat --csv -i Fasta/SARS-CoV-2-Ab.pep -o result/SARS-CoV-2-Ab```   
+    - Input file:
+      - [./Fasta/SARS-CoV-2-Ab.pep](./Fasta/SARS-CoV-2-Ab.pep)
+    - Output files:
+      - [./result/SARS-CoV-2-Ab_H.csv](./result/SARS-CoV-2-Ab_H.csv)
+      - [./result/SARS-CoV-2-Ab_KL.csv](./result/SARS-CoV-2-Ab_KL.csv)
+
+2. Numbering germline sequences according to Kabat numbering   
+```ANARCI --scheme kabat --csv -i imgt_database/human_prot/IGV.fasta -o result/Human_IGV_gene_kabat_num```
+    - Input files:
+      - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
+    - Output files:
+      - [./result/Human_IGV_gene_kabat_num_H.csv](./result/Human_IGV_gene_kabat_num_H.csv)
+      - [./result/Human_IGV_gene_kabat_num_KL.csv](./result/Human_IGV_gene_kabat_num_KL.csv)
+
+3. Calling SHMs   
+```python3 code/SHM_analysis.py```   
+    - Input files:
+      - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
+      - [./result/SARS-CoV-2-Ab_H.csv](./result/SARS-CoV-2-Ab_H.csv)
+      - [./result/SARS-CoV-2-Ab_KL.csv](./result/SARS-CoV-2-Ab_KL.csv)
+      - [./result/Human_IGV_gene_kabat_num_H.csv](./result/Human_IGV_gene_kabat_num_H.csv)
+      - [./result/Human_IGV_gene_kabat_num_KL.csv](./result/Human_IGV_gene_kabat_num_KL.csv)
+    - Output files:
+      - [./result/SHM_antibody.tsv](./result/SHM_antibody.tsv)
+      - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
 
 ## Deep learning model for antigen identification
 
@@ -90,5 +119,18 @@ Database set up in pyir library directory
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
     - Output file:
       - [./graph/CDRH3_cluster_size.png](./graph/CDRH3_cluster_size.png)
-    
 
+2. Generate sequence logo for different CDR H3 clusters   
+```python3 code/CDRH3_seqlogo.py```   
+    - Input file:
+      - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
+    - Output files:
+      - ./CDRH3_seqlogo/*.png
+
+3. Plot SHM   
+```Rscript code/plot_SHM.R```   
+    - Input file:
+      - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
+    - Output files:
+      - [./graph/SHM_HC_frequency.png](./graph/SHM_HC_frequency.png)
+      - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
