@@ -1,8 +1,6 @@
-This README describes the analyzes in "A large-scale systematic survey of SARS-CoV-2 antibodies
-reveals recurring molecular features"
-
-
-## SARS-CoV-2 Antibodies
+# SARS-CoV-2 Antibodies dataset survey
+This README describes the analyzes in ["A large-scale systematic survey of SARS-CoV-2 antibodies
+reveals recurring molecular features"](https:xxx)
 
 
 ## Dependencies ##
@@ -12,19 +10,28 @@ reveals recurring molecular features"
 * [BioPython](https://github.com/biopython/biopython)
 * [Pandas](https://pandas.pydata.org/)
 * [Openpyxl](https://openpyxl.readthedocs.io/en/stable/)
-* [Distance](https://pypi.org/project/Distance/)
 
-## Installation ##
+## Dependencies Installation ##
 Install everything dependencies by conda:
 
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance igblast```
+```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl igblast```
 
+## Contents
 
-## Local igblast set up
+[Local igblast setup](#local-igblast-setup)   
+[Baseline VDJ setup](#baseline-vdj-setup)   
+[CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
+[Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
+[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)
+[Plotting](#plotting)  
+
+## Local igblast setup
+
+Before analysis, do:
 
 ```conda activate Abs```
 
-PyIR: An IgBLAST wrapper and parser[https://github.com/crowelab/PyIR]
+### PyIR: An IgBLAST wrapper and parser[https://github.com/crowelab/PyIR]
 
 ```pip3 install crowelab_pyir```
 
@@ -32,10 +39,10 @@ Database set up in pyir library directory
 
 ```pyir setup```
 
-- Manuualy install amino acid database from imgt
+### Manuualy install IMGT REF database
 
 1. Sequence download from  http://www.imgt.org/vquest/refseqh.html#VQUEST
-2. Copy and paste, save as fasta(save all V gene in one file)
+2. Copy and paste, save as fasta(save all V gene in one file; all D gene in one file; all J gene in one file)
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
 ```edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
@@ -46,9 +53,22 @@ Database set up in pyir library directory
 
 - Run PyIR for igBlast
 
-  see [PyIr.py](./code/_PyIR_.py)
+  see [PyIR.py](./code/_PyIR_.py)
 
-- Run local igblast and CDR parser
+### Run local igblast and CDR parser
+
+1. Run local igblast on kabat numbering system
+```igblastn -query result/test.fasta 
+    -germline_db_V imgt_database/human_nuc/IGV.fasta 
+    -germline_db_J imgt_database/human_nuc/IGJ.fasta 
+    -germline_db_D imgt_database/human_nuc/IGD.fasta 
+    -organism human -domain_system kabat 
+    -auxiliary_data imgt_database/optional_file/human_gl.aux 
+    -out result/igblast_output
+```
+2.Parse igblast output
+Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
+
 
 ## Baseline VDJ setup
 
