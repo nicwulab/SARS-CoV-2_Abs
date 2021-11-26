@@ -83,14 +83,20 @@ igblastn -query result/test.fasta
 
 1. Download healthy Antibody repertoire data from [cAb-Rep](https://www.frontiersin.org/articles/10.3389/fimmu.2019.02365/full)
 
-
 2. [Cal_repertoire_freq.py](./code/Cal_repertoire_freq.py) is used to establish the baseline germline usage frequency
 
+## Analyzing VDJ gene usage and IGHV/IGK(L)V pairing
+1. Extract VDJ gene usage   
+```
+python3 code/VDJgene_freq_analysis.py
+```
 
 ## CDR H3 clustering analysis
 
 1. Extract information from the antibody dataset for downstream analyses   
-```python3 code/parse_Ab_table.py```   
+```
+python3 code/parse_Ab_table.py
+```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output files:
