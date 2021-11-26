@@ -45,7 +45,9 @@ Database set up in pyir library directory
 ### Manually install IMGT REF database
 
 1. Sequence download from  http://www.imgt.org/vquest/refseqh.html#VQUEST
+
 2. Copy and paste, save as fasta(save all V gene in one file; all D gene in one file; all J gene in one file)
+
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
 [edit_imgt_file.pl](./code/edit_imgt_file.pl) ```imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
@@ -62,7 +64,8 @@ Database set up in pyir library directory
 
 1. Run local igblast on kabat numbering system
 
-```igblastn -query result/test.fasta 
+```
+    igblastn -query result/test.fasta 
     -germline_db_V imgt_database/human_nuc/IGV.fasta 
     -germline_db_J imgt_database/human_nuc/IGJ.fasta 
     -germline_db_D imgt_database/human_nuc/IGD.fasta 
@@ -71,7 +74,7 @@ Database set up in pyir library directory
     -out result/igblast_output
 ```
 
-2.Parse igblast output
+2. Parse igblast output
 
 Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
 
