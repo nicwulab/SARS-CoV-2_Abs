@@ -1,5 +1,5 @@
 # SARS-CoV-2 Antibodies dataset survey
-This README describes the analyzes in ["A large-scale systematic survey of SARS-CoV-2 antibodies
+This README describes the analysis on ["A large-scale systematic survey of SARS-CoV-2 antibodies
 reveals recurring molecular features"](https:xxx)
 
 ## Contents
