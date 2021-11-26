@@ -1,4 +1,8 @@
-# SARS-CoV-2 Antibodies
+This README describes the scripts used for the sequence analysis in "A large-scale systematic survey of SARS-CoV-2 antibodies
+reveals recurring molecular features"
+
+
+## SARS-CoV-2 Antibodies
 
 
 ## Dependencies ##
@@ -12,7 +16,7 @@ Install everything dependencies by conda:
 ```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython igblast```
 
 
-Local igblast set up
+### Local igblast set up
 
 ```conda activate Abs(for Mac)```
 
@@ -24,7 +28,7 @@ database set up in pyir library directory
 
 ```pyir setup```
 
-manuualy intall amino acid database from imgt
+- manuualy intall amino acid database from imgt
 
 1. sequence download from  http://www.imgt.org/vquest/refseqh.html#VQUEST
 2. copy and paste, save as fasta(save all V gene in one file)
@@ -36,6 +40,19 @@ manuualy intall amino acid database from imgt
 
 ```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```
 
-run PyIR for igBlast
+- run PyIR for igBlast
 
-see [PyIr.py](./code/_PyIR_.py)
+  see [PyIr.py](./code/_PyIR_.py)
+
+- run local igblast and CDR parser
+
+### Baseline VDJ setup
+
+### CDR H3 clustering analysis
+
+### Identification of recurring somatic hypermutation (SHM)![image](https://user-images.githubusercontent.com/53042063/143530364-0e7c69e1-f61d-40a7-97b1-464df17dedbf.png)
+
+### Deep learning model for antigen identification
+
+### Plotting
+
