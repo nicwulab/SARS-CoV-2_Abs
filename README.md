@@ -1,5 +1,6 @@
 # Sequence analysis of SARS-CoV-2 antibodies
-This README describes the analyses in ["A large-scale systematic survey of SARS-CoV-2 antibodies
+This README describes the analyses in:   
+["A large-scale systematic survey of SARS-CoV-2 antibodies
 reveals recurring molecular features"](https:xxx)
 
 ## Contents
