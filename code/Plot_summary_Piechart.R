@@ -57,7 +57,7 @@ plot_beeswarm <- function (df,column,path){
 }
 
 
-Ab_DF <- read_excel('result/SARS-CoV-2-Abs_v37.xlsx')%>%
+Ab_DF <- read_excel('data/SARS-CoV-2-Abs.xlsx')%>%
   separate(`Heavy V Gene`,into = c("HV", "HV_rest"),sep = '\\*',extra = "merge") %>%
   separate(`Heavy J Gene`,into = c("HJ", "HJ_rest"),sep = '\\*',extra = "merge") %>%
   separate(`Light V Gene`,into = c("LV", "LV_rest"),sep = '\\*',extra = "merge") %>%

@@ -171,7 +171,16 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
   - [./code/CoV_Encoder/result](./code/CoV_Encoder/result)
 
 ## Plotting
-1. Plot VDJ gene usage   
+1. Plot summary statistics   
+```Rscript code/Plot_summary_Piechart.R```   
+    - Input file:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+    - Output file:
+      - [./graph/origin_pie.png](./graph/origin_pie.png)
+      - [./graph/epitope_pie.png](./graph/epitope_pie.png)
+      - [./graph/source_beeswarm.png](./graph/source_beeswarm.png)
+
+2. Plot VDJ gene usage   
 ```Rscript code/Plot_VDJgene_Freq.R```   
     - Input files:
       - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
@@ -185,7 +194,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/LV_gene_usage.png](./graph/LV_gene_usage.png)
       - [./graph/D_gene_usage.png](./graph/D_gene_usage.png)
 
-2. plot IGHV/IGK(L)V pairing frequency
+3. plot IGHV/IGK(L)V pairing frequency
 ```Rscript code/Plot_point_heatmap.R```   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -194,21 +203,28 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
     - Output file:
       - [./graph/HLV_epitope_heatmap.png](./graph/HLV_epitope_heatmap.png)
 
-3. Plot CDR H3 cluster size   
+4. Plot CDR H3 cluster size   
 ```Rscript code/plot_CDRH3_cluster_summary.R```   
     - Input file:
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
     - Output file:
       - [./graph/CDRH3_cluster_size.png](./graph/CDRH3_cluster_size.png)
 
-4. Generate sequence logo for different CDR H3 clusters   
+5. Generate sequence logo for different CDR H3 clusters   
 ```python3 code/CDRH3_seqlogo.py```   
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
     - Output files:
       - ./CDRH3_seqlogo/*.png
 
-5. Plot analysis results for IGHD1-26-encoded S2 antibodies
+6. Plot IGHV gene usage for CDR H3 cluster 7   
+```code/plot_cluster7_Vgenes.R```   
+    - Input file:
+      - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
+    - Output file:
+      - [./graph/Vgenes_cluster7.png](./graph/Vgenes_cluster7.png)
+
+7. Plot analysis results for IGHD1-26-encoded S2 antibodies
 ```Rscript code/plot_IGHD1-26_analysis.R```   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
@@ -219,7 +235,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/HJgenes_pie_other.png](./graph/HJgenes_pie_other.png)
       - [./graph/S2_IGHD1-26_CDRH3_len.png](./graph/S2_IGHD1-26_CDRH3_len.png)
  
-6. Plot SHM   
+8. Plot SHM   
 ```Rscript code/plot_SHM.R```   
     - Input file:
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
@@ -227,7 +243,7 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./graph/SHM_HC_frequency.png](./graph/SHM_HC_frequency.png)
       - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
 
-7. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
+9. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair
 ```Rscript code/Plot_basic_stat.R```
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
