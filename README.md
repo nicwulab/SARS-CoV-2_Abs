@@ -85,7 +85,7 @@ igblastn -query result/test.fasta
 
 2. Parse igblast output
 
-- Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
+- Using [CDR_Parser.py](./code/CDR_Parser.py) for igblast_output
 
 ## Baseline VDJ setup
 
