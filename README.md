@@ -146,7 +146,8 @@ igblastn -query result/test.fasta
 ## Deep learning model for antigen identification
 
 Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
-see [Epitope_classification.ipynb](./Code/CoV_Encoder/Epitope_classification.ipynb) for detail
+
+- see [Epitope_classification.ipynb](./Code/CoV_Encoder/Epitope_classification.ipynb) for detail
 
 ## Plotting
 1. Plot CDR H3 cluster size   
