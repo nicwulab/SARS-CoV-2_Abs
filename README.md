@@ -1,11 +1,11 @@
-# SARS-CoV-2 Antibodies dataset survey
+# Sequence analysis of SARS-CoV-2 antibodies
 This README describes the analyses in ["A large-scale systematic survey of SARS-CoV-2 antibodies
 reveals recurring molecular features"](https:xxx)
 
 ## Contents
 
 [Local igblast setup](#local-igblast-setup)   
-[Analyzing VDJ gene usage and V gene pairing](#Analyzing-VDJ-gene-usage-and-V-gene-pairing)   
+[Analysis of VDJ gene usage and V gene pairing](#Analysis-of-VDJ-gene-usage-and-V-gene-pairing)   
 [Baseline VDJ setup](#baseline-vdj-setup)   
 [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
 [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
@@ -31,7 +31,7 @@ reveals recurring molecular features"](https:xxx)
 * [Logomaker](https://logomaker.readthedocs.io/en/latest/)
 
 ## Dependencies Installation ##
-Install everything dependencies by conda:
+Install dependencies by conda:
 
 ```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance logomaker igblast anarci```
 
@@ -53,15 +53,16 @@ Database set up in pyir library directory
 
 1. Sequence download from  http://www.imgt.org/vquest/refseqh.html#VQUEST
 
-2. Copy and paste, save as fasta(save all V gene in one file; all D gene in one file; all J gene in one file)
+2. Copy and paste, save as fasta (save all V gene in one file; all D gene in one file; all J gene in one file)
 
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
 ```edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
 
-4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence)
+4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence). For example:
 
 ```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```
+```makeblastdb -parse_seqids -dbtype nucl -in imgt_database/human_nuc/IGV.fasta```
 
 5. Run PyIR for igBlast
 
@@ -85,14 +86,13 @@ igblastn -query result/test.fasta
 
 - Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
 
-
 ## Baseline VDJ setup
 
-1. Download healthy Antibody repertoire data from [cAb-Rep](https://www.frontiersin.org/articles/10.3389/fimmu.2019.02365/full)
+1. Download antibody repertoire data for healthy donors from [cAb-Rep](https://www.frontiersin.org/articles/10.3389/fimmu.2019.02365/full)
 
 2. [Cal_repertoire_freq.py](./code/Cal_repertoire_freq.py) is used to establish the baseline germline usage frequency
 
-## Analyzing VDJ gene usage and V gene pairing
+## Analysis of VDJ gene usage and V gene pairing
 1. Extract VDJ gene usage   
 ```python3 code/VDJgene_freq_analysis.py```   
     - Input file:
