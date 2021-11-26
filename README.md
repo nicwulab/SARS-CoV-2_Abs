@@ -50,7 +50,7 @@ Database set up in pyir library directory
 
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
-[edit_imgt_file.pl](./code/edit_imgt_file.pl) ```imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
+```edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
 
 4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence)
 
@@ -58,7 +58,7 @@ Database set up in pyir library directory
 
 5. Run PyIR for igBlast
 
-  see [PyIR.py](./code/_PyIR_.py)
+- see [PyIR.py](./code/_PyIR_.py)
 
 ### Run local igblast and CDR parser
 
@@ -76,7 +76,7 @@ igblastn -query result/test.fasta
 
 2. Parse igblast output
 
-  Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
+- Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
 
 
 ## Baseline VDJ setup
@@ -144,6 +144,9 @@ igblastn -query result/test.fasta
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
 
 ## Deep learning model for antigen identification
+
+Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
+see [Epitope_classification.ipynb](./Code/CoV_Encoder/Epitope_classification.ipynb) for detail
 
 ## Plotting
 1. Plot CDR H3 cluster size   
