@@ -2,6 +2,15 @@
 This README describes the analyzes in ["A large-scale systematic survey of SARS-CoV-2 antibodies
 reveals recurring molecular features"](https:xxx)
 
+## Contents
+
+[Local igblast setup](#local-igblast-setup)   
+[Baseline VDJ setup](#baseline-vdj-setup)   
+[CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
+[Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
+[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)
+[Plotting](#plotting)  
+
 
 ## Dependencies ##
 * python=3.9
@@ -14,16 +23,7 @@ reveals recurring molecular features"](https:xxx)
 ## Dependencies Installation ##
 Install everything dependencies by conda:
 
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl igblast```
-
-## Contents
-
-[Local igblast setup](#local-igblast-setup)   
-[Baseline VDJ setup](#baseline-vdj-setup)   
-[CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
-[Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
-[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)
-[Plotting](#plotting)  
+```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl igblast```  
 
 ## Local igblast setup
 
@@ -45,7 +45,7 @@ Database set up in pyir library directory
 2. Copy and paste, save as fasta(save all V gene in one file; all D gene in one file; all J gene in one file)
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
-```edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
+```[edit_imgt_file.pl](./code/edit_imgt_file.pl) imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
 
 4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence)
 
@@ -71,6 +71,12 @@ Using [CDR_parser.py](./code/CDR_parser.py) for igblast_output
 
 
 ## Baseline VDJ setup
+
+1. Download healthy Antibody repertoire data from [cAb-Rep](https://www.frontiersin.org/articles/10.3389/fimmu.2019.02365/full)
+
+
+2. [Cal_repertoire_freq.py](./code/Cal_repertoire_freq.py) is used to establish the baseline germline usage frequency
+
 
 ## CDR H3 clustering analysis
 
