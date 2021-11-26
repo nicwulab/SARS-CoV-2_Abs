@@ -1,5 +1,5 @@
 # SARS-CoV-2 Antibodies dataset survey
-This README describes the analysis on ["A large-scale systematic survey of SARS-CoV-2 antibodies
+This README describes the analyses in ["A large-scale systematic survey of SARS-CoV-2 antibodies
 reveals recurring molecular features"](https:xxx)
 
 ## Contents
@@ -12,6 +12,10 @@ reveals recurring molecular features"](https:xxx)
 [Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
 [Plotting](#plotting)  
 
+## Input files 
+
+* [data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx): List of antibodies collected from publications and patents
+* [HV_Repertoire_freq.xlsx](./HV_Repertoire_freq.xlsx): Baseline IGHV usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
 
 ## Dependencies ##
 * python=3.9
@@ -171,9 +175,9 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
       - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
       - [./result/LVgene_freq.tsv](./result/LVgene_freq.tsv)
       - [./result/Dgene_freq.tsv](./result/Dgene_freq.tsv)
-      - [./data/HV_Repertoire_freq.xlsx][./data/HV_Repertoire_freq.xlsx]
-      - [./data/LV_Repertoire_freq.xlsx][./data/LV_Repertoire_freq.xlsx]
-      - [./data/D_Repertoire_freq.xlsx][./data/D_Repertoire_freq.xlsx]
+      - [./data/HV_Repertoire_freq.xlsx](./data/HV_Repertoire_freq.xlsx)
+      - [./data/LV_Repertoire_freq.xlsx](./data/LV_Repertoire_freq.xlsx)
+      - [./data/D_Repertoire_freq.xlsx](./data/D_Repertoire_freq.xlsx)
     - Output files:
       - [./graph/HV_gene_usage.png](./graph/HV_gene_usage.png)
       - [./graph/LV_gene_usage.png](./graph/LV_gene_usage.png)
@@ -183,8 +187,8 @@ Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
 ```Rscript code/Plot_point_heatmap.R```   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
-      - [./data/HV_Repertoire_freq.xlsx][./data/HV_Repertoire_freq.xlsx]
-      - [./data/LV_Repertoire_freq.xlsx][./data/LV_Repertoire_freq.xlsx]
+      - [./data/HV_Repertoire_freq.xlsx](./data/HV_Repertoire_freq.xlsx)
+      - [./data/LV_Repertoire_freq.xlsx](./data/LV_Repertoire_freq.xlsx)
     - Output file:
       - [./graph/HLV_epitope_heatmap.png](./graph/HLV_epitope_heatmap.png)
 
