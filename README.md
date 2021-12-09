@@ -161,9 +161,9 @@ igblastn -query result/test.fasta
 
 ## Deep learning model for antigen identification
 
-Deep learning model is under [CoV_Encoder](./Code/CoV_Encoder)
+Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
 
-- see [Epitope_classification.ipynb](./Code/CoV_Encoder/Epitope_classification.ipynb) for detail
+- see [Epitope_classification.ipynb](./code/CoV_Encoder/Epitope_classification.ipynb) for detail
 
 - Input files:
   - [./code/CoV_Encoder/data/S-HA_Abs_v6_binary.xlsx](./code/CoV_Encoder/data/S-HA_Abs_v6_binary.xlsx)  
