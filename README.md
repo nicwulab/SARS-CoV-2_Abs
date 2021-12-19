@@ -4,13 +4,13 @@ This README describes the analyses in the study:
 
 ## Contents
 
-[Local igblast setup](#local-igblast-setup)   
-[Analysis of VDJ gene usage and V gene pairing](#Analysis-of-VDJ-gene-usage-and-V-gene-pairing)   
-[Baseline VDJ setup](#baseline-vdj-setup)   
-[CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
-[Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
-[Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
-[Plotting](#plotting)  
+* [Local igblast setup](#local-igblast-setup)   
+* [Analysis of VDJ gene usage and V gene pairing](#Analysis-of-VDJ-gene-usage-and-V-gene-pairing)   
+* [Baseline VDJ setup](#baseline-vdj-setup)   
+* [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
+* [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
+* [Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
+* [Plotting](#plotting)  
 
 ## Input files 
 
@@ -29,6 +29,7 @@ This README describes the analyses in the study:
 * [Distance](https://pypi.org/project/Distance/)
 * [ANARCI](https://github.com/oxpig/ANARCI)
 * [Logomaker](https://logomaker.readthedocs.io/en/latest/)
+* [R](https://www.r-project.org/)
 
 ## Dependencies Installation ##
 Install dependencies by conda:
