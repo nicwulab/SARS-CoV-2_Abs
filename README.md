@@ -143,11 +143,7 @@ igblastn -query result/test.fasta \
 
 ## Identification of recurring somatic hypermutation (SHM)
 1. Numbering SARS2 antibody sequences according to Kabat numbering   
-```
-ANARCI --scheme kabat --csv \
-  -i Fasta/SARS-CoV-2-Ab.pep \
-  -o result/SARS-CoV-2-Ab
-```   
+``ANARCI --scheme kabat --csv -i Fasta/SARS-CoV-2-Ab.pep -o result/SARS-CoV-2-Ab``   
     - Input file:
       - [./Fasta/SARS-CoV-2-Ab.pep](./Fasta/SARS-CoV-2-Ab.pep)
     - Output files:
@@ -155,12 +151,7 @@ ANARCI --scheme kabat --csv \
       - [./result/SARS-CoV-2-Ab_KL.csv](./result/SARS-CoV-2-Ab_KL.csv)
 
 2. Numbering germline sequences according to Kabat numbering   
-```
-ANARCI --scheme kabat --csv \
-  -i imgt_database/human_prot/IGV.fasta \
-  -o result/Human_IGV_gene_kabat_num
-```   
-
+``ANARCI --scheme kabat --csv -i imgt_database/human_prot/IGV.fasta -o result/Human_IGV_gene_kabat_num``   
     - Input files:
       - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
     - Output files:
