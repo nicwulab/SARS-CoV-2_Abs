@@ -155,11 +155,11 @@ ANARCI --scheme kabat --csv \
       - [./result/SARS-CoV-2-Ab_KL.csv](./result/SARS-CoV-2-Ab_KL.csv)
 
 2. Numbering germline sequences according to Kabat numbering   
-```
+``
 ANARCI --scheme kabat --csv \
   -i imgt_database/human_prot/IGV.fasta \
   -o result/Human_IGV_gene_kabat_num
-```   
+``   
     - Input files:
       - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
     - Output files:
