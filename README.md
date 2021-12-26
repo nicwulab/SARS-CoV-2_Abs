@@ -34,21 +34,31 @@ This README describes the analyses in:
 ## Dependencies Installation ##
 Install dependencies by conda:
 
-```conda create -n Abs -c bioconda -c anaconda -c conda-forge python=3.9 biopython pandas openpyxl distance logomaker igblast anarci```
+```
+conda create -n Abs -c bioconda -c anaconda -c conda-forge \
+  python=3.9 \
+  biopython \
+  pandas \
+  openpyxl \
+  distance \
+  logomaker \
+  igblast \
+  anarci
+```
 
 ## Local igblast setup
 
 Before analysis, do:
 
-```conda activate Abs```
+``conda activate Abs``
 
 ### PyIR: An IgBLAST wrapper and parser
 
-```pip3 install crowelab_pyir```
+``pip3 install crowelab_pyir``
 
 Database set up in pyir library directory
 
-```pyir setup```
+``pyir setup``
 
 ### Manually install IMGT REF database
 
@@ -58,13 +68,13 @@ Database set up in pyir library directory
 
 3. Clean data (raw edit_imgt_file.pl can be found on igblast-1.17.1xxx/bin)
 
-```edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta```
+``edit_imgt_file.pl imgt_database/human_prot/imgt_raw/IGV.fasta > imgt_database/human_prot/IGV.fasta``
 
 4. Create database (use "-dbtype prot" for protein sequence, use "-dbtype nucl" for DNA sequence). For example:
 
-```makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta```   
+``makeblastdb -parse_seqids -dbtype prot -in imgt_database/human_prot/IGV.fasta``   
 
-```makeblastdb -parse_seqids -dbtype nucl -in imgt_database/human_nuc/IGV.fasta```
+``makeblastdb -parse_seqids -dbtype nucl -in imgt_database/human_nuc/IGV.fasta``
 
 5. Run PyIR for igBlast
 
@@ -75,12 +85,12 @@ Database set up in pyir library directory
 1. Run local igblast on kabat numbering system
 
 ```
-igblastn -query result/test.fasta
-  -germline_db_V imgt_database/human_nuc/IGV.fasta 
-  -germline_db_J imgt_database/human_nuc/IGJ.fasta 
-  -germline_db_D imgt_database/human_nuc/IGD.fasta 
-  -organism human -domain_system kabat 
-  -auxiliary_data imgt_database/optional_file/human_gl.aux 
+igblastn -query result/test.fasta \
+  -germline_db_V imgt_database/human_nuc/IGV.fasta \
+  -germline_db_J imgt_database/human_nuc/IGJ.fasta \
+  -germline_db_D imgt_database/human_nuc/IGD.fasta \
+  -organism human -domain_system kabat \
+  -auxiliary_data imgt_database/optional_file/human_gl.aux \
   -out result/igblast_output
 ```
 
@@ -96,7 +106,7 @@ igblastn -query result/test.fasta
 
 ## Analysis of VDJ gene usage and V gene pairing
 1. Extract VDJ gene usage   
-```python3 code/VDJgene_freq_analysis.py```   
+``python3 code/VDJgene_freq_analysis.py``   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output files:
@@ -107,7 +117,7 @@ igblastn -query result/test.fasta
 ## CDR H3 clustering analysis
 
 1. Extract information from the antibody dataset for downstream analyses   
-```python3 code/parse_Ab_table.py```   
+``python3 code/parse_Ab_table.py``   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output files:
@@ -116,14 +126,14 @@ igblastn -query result/test.fasta
       - [./result/refs.txt](./result/refs.txt)
 
 2. Clustering CDR H3 sequences   
-```python3 code/CDRH3_clustering_optimal.py```   
+``python3 code/CDRH3_clustering_optimal.py``   
     - Input file:
       - [./result/CDRH3.tsv](./result/CDRH3.tsv)
     - Output file:
       - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
 
 3. Analyzing CDR H3 clustering results   
-```python3 code/analyze_CDRH3_cluster.py```   
+``python3 code/analyze_CDRH3_cluster.py``   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
       - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
@@ -133,7 +143,7 @@ igblastn -query result/test.fasta
 
 ## Identification of recurring somatic hypermutation (SHM)
 1. Numbering SARS2 antibody sequences according to Kabat numbering   
-```ANARCI --scheme kabat --csv -i Fasta/SARS-CoV-2-Ab.pep -o result/SARS-CoV-2-Ab```   
+``ANARCI --scheme kabat --csv -i Fasta/SARS-CoV-2-Ab.pep -o result/SARS-CoV-2-Ab``   
     - Input file:
       - [./Fasta/SARS-CoV-2-Ab.pep](./Fasta/SARS-CoV-2-Ab.pep)
     - Output files:
@@ -141,7 +151,7 @@ igblastn -query result/test.fasta
       - [./result/SARS-CoV-2-Ab_KL.csv](./result/SARS-CoV-2-Ab_KL.csv)
 
 2. Numbering germline sequences according to Kabat numbering   
-```ANARCI --scheme kabat --csv -i imgt_database/human_prot/IGV.fasta -o result/Human_IGV_gene_kabat_num```
+``ANARCI --scheme kabat --csv -i imgt_database/human_prot/IGV.fasta -o result/Human_IGV_gene_kabat_num``   
     - Input files:
       - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
     - Output files:
@@ -149,7 +159,7 @@ igblastn -query result/test.fasta
       - [./result/Human_IGV_gene_kabat_num_KL.csv](./result/Human_IGV_gene_kabat_num_KL.csv)
 
 3. Calling SHMs   
-```python3 code/SHM_analysis.py```   
+``python3 code/SHM_analysis.py``   
     - Input files:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
       - [./result/SARS-CoV-2-Ab_H.csv](./result/SARS-CoV-2-Ab_H.csv)
@@ -174,7 +184,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
 
 ## Plotting
 1. Plot summary statistics   
-```Rscript code/Plot_summary_Piechart.R```   
+``Rscript code/Plot_summary_Piechart.R``   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output file:
@@ -183,7 +193,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - [./graph/source_beeswarm.png](./graph/source_beeswarm.png)
 
 2. Plot VDJ gene usage   
-```Rscript code/Plot_VDJgene_Freq.R```   
+``Rscript code/Plot_VDJgene_Freq.R``   
     - Input files:
       - [./result/HVgene_freq.tsv](./result/HVgene_freq.tsv)
       - [./result/LVgene_freq.tsv](./result/LVgene_freq.tsv)
@@ -197,7 +207,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - [./graph/D_gene_usage.png](./graph/D_gene_usage.png)
 
 3. plot IGHV/IGK(L)V pairing frequency   
-```Rscript code/Plot_point_heatmap.R```   
+``Rscript code/Plot_point_heatmap.R``   
     - Input files:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
       - [./data/HV_Repertoire_freq.xlsx](./data/HV_Repertoire_freq.xlsx)
@@ -206,28 +216,28 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - [./graph/HLV_epitope_heatmap.png](./graph/HLV_epitope_heatmap.png)
 
 4. Plot CDR H3 cluster size   
-```Rscript code/plot_CDRH3_cluster_summary.R```   
+``Rscript code/plot_CDRH3_cluster_summary.R``   
     - Input file:
       - [./result/CDRH3_cluster_summary.tsv](./result/CDRH3_cluster_summary.tsv)
     - Output file:
       - [./graph/CDRH3_cluster_size.png](./graph/CDRH3_cluster_size.png)
 
 5. Generate sequence logo for different CDR H3 clusters   
-```python3 code/CDRH3_seqlogo.py```   
+``python3 code/CDRH3_seqlogo.py``   
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
     - Output files:
       - ./CDRH3_seqlogo/*.png
 
 6. Plot IGHV gene usage for CDR H3 cluster 7   
-```code/plot_cluster7_Vgenes.R```   
+``code/plot_cluster7_Vgenes.R``   
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
     - Output file:
       - [./graph/Vgenes_cluster7.png](./graph/Vgenes_cluster7.png)
 
 7. Plot analysis results for IGHD1-26-encoded S2 antibodies   
-```Rscript code/plot_IGHD1-26_analysis.R```   
+``Rscript code/plot_IGHD1-26_analysis.R``   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output file:
@@ -238,7 +248,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - [./graph/S2_IGHD1-26_CDRH3_len.png](./graph/S2_IGHD1-26_CDRH3_len.png)
  
 8. Plot SHM   
-```Rscript code/plot_SHM.R```   
+``Rscript code/plot_SHM.R``   
     - Input file:
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
     - Output files:
@@ -246,7 +256,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - [./graph/SHM_LC_frequency.png](./graph/SHM_LC_frequency.png)
 
 9. Plot the number of neutralizing vs non-neutralizing antibodies in each IGHV/IGK(L)V pair   
-```Rscript code/Plot_basic_stat.R```   
+``Rscript code/Plot_basic_stat.R``   
     - Input file:
       - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
     - Output file:
