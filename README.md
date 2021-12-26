@@ -160,11 +160,12 @@ ANARCI --scheme kabat --csv \
   -i imgt_database/human_prot/IGV.fasta \
   -o result/Human_IGV_gene_kabat_num
 ```   
-  - Input files:
-    - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
-  - Output files:
-    - [./result/Human_IGV_gene_kabat_num_H.csv](./result/Human_IGV_gene_kabat_num_H.csv)
-    - [./result/Human_IGV_gene_kabat_num_KL.csv](./result/Human_IGV_gene_kabat_num_KL.csv)
+
+    - Input files:
+      - [./imgt_database/human_prot/IGV.fasta](./imgt_database/human_prot/IGV.fasta)
+    - Output files:
+      - [./result/Human_IGV_gene_kabat_num_H.csv](./result/Human_IGV_gene_kabat_num_H.csv)
+      - [./result/Human_IGV_gene_kabat_num_KL.csv](./result/Human_IGV_gene_kabat_num_KL.csv)
 
 3. Calling SHMs   
 ``python3 code/SHM_analysis.py``   
