@@ -8,7 +8,9 @@ This README describes the analyses in:
 * [Analysis of VDJ gene usage and V gene pairing](#Analysis-of-VDJ-gene-usage-and-V-gene-pairing)   
 * [Baseline VDJ setup](#baseline-vdj-setup)   
 * [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
-* [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-(shm))   
+* [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-shm)   
+* [Analysis of recurring SHM in IGHV1-58/IGKV3-20 antibodies](#SARS-CoV-2_Abs#analysis-of-recurring-shm-in-ighv1-58igkv3-20-antibodies)
+* [Clonotype assignment](#Clonotype-assignment)
 * [Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
 * [Plotting](#plotting)  
 
@@ -188,6 +190,14 @@ igblastn -query result/test.fasta \
 
 3. Constructing phylogenetic tree
 ``FastTree Fasta/Cluster3_H158K320_LC.aln > result/Cluster3_H158K320_LC.tree``
+
+## Clonotype assignment
+1. Antibodies with the same IGHV, IGK(L)V, IGHJ, IGK(L)J, and belong to the same CDR H3 cluster will be assigned to the same clonotype
+    - Input files:
+      - [./data/SARS-CoV-2-Abs.xlsx](./data/SARS-CoV-2-Abs.xlsx)
+      - [./result/CDRH3_cluster.tsv](./result/CDRH3_cluster.tsv)
+    - Output file:
+      - [./result/clonotype_assign.tsv](./result/clonotype_assign.tsv)
 
 ## Deep learning model for antigen identification
 
