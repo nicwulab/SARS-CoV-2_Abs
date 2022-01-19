@@ -9,7 +9,7 @@ This README describes the analyses in:
 * [Baseline VDJ setup](#baseline-vdj-setup)   
 * [CDR H3 clustering analysis](#cdr-h3-clustering-analysis)    
 * [Identification of recurring somatic hypermutation (SHM)](#identification-of-recurring-somatic-hypermutation-shm)   
-* [Analysis of recurring SHM in IGHV1-58/IGKV3-20 antibodies](#SARS-CoV-2_Abs#analysis-of-recurring-shm-in-ighv1-58igkv3-20-antibodies)
+* [Analysis of recurring SHM in IGHV1-58/IGKV3-20 antibodies](#analysis-of-recurring-shm-in-ighv1-58igkv3-20-antibodies)
 * [Clonotype assignment](#Clonotype-assignment)
 * [Deep learning model for antigen identification](#deep-learning-model-for-antigen-identification)   
 * [Plotting](#plotting)  
