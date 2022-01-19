@@ -20,8 +20,10 @@ This README describes the analyses in:
 * [./data/D_Repertoire_freq.xlsx](./data/D_Repertoire_freq.xlsx): Baseline IGHD usage (see [Baseline VDJ setup](#Baseline-VDJ-setup))
 
 ## Dependencies ##
-* python=3.9
+* [python3](https://www.python.org/downloads/)
 * [Igblast](https://github.com/ncbi/igblast)
+* [MAFFT](https://mafft.cbrc.jp/alignment/software/)
+* [FastTree](http://www.microbesonline.org/fasttree/)
 * [PyIR](https://github.com/crowelab/PyIR)
 * [BioPython](https://github.com/biopython/biopython)
 * [Pandas](https://pandas.pydata.org/)
@@ -43,7 +45,9 @@ conda create -n Abs -c bioconda -c anaconda -c conda-forge \
   distance \
   logomaker \
   igblast \
-  anarci
+  anarci \
+  mafft \
+  fasttree
 ```
 
 ## Local igblast setup
@@ -170,6 +174,21 @@ igblastn -query result/test.fasta \
       - [./result/SHM_antibody.tsv](./result/SHM_antibody.tsv)
       - [./result/SHM_frequency.tsv](./result/SHM_frequency.tsv)
 
+## Analysis of recurring SHM in IGHV1-58/IGKV3-20 antibodies
+1. Extracting light chain sequences from IGHV1-58/IGKV3-20 antibodies
+``python3 code/extract_IGHV1-58.py``
+    - Input file:
+      - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
+    - Output files:
+      - [./Fasta/Cluster3_H158K320_LC.pep](./Fasta/Cluster3_H158K320_LC.pep)
+      - [./result/Cluster3_H158K320_LC_class.tsv](./result/Cluster3_H158K320_LC_class.tsv)
+
+2. Multiple sequence alignment
+``mafft Fasta/Cluster3_H158K320_LC.pep > Fasta/Cluster3_H158K320_LC.aln``
+
+3. Constructing phylogenetic tree
+``FastTree Fasta/Cluster3_H158K320_LC.aln > result/Cluster3_H158K320_LC.tree``
+
 ## Deep learning model for antigen identification
 
 Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
@@ -262,3 +281,10 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
     - Output file:
       - [./RBD_neutralization_sactter](./RBD_neutralization_sactter)
 
+10. Plot phylogenetic tree for the light chains of IGHV1-58/IGKV3-20 antibodies
+``Rscript code/plot_tree_KV320.R``
+    - Input files:
+      - [./result/Cluster3_H158K320_LC.tree](./result/Cluster3_H158K320_LC.tree)
+      - [./result/Cluster3_H158K320_LC_class.tsv](./result/Cluster3_H158K320_LC_class.tsv)
+    - Output file:
+      - [./graph/Cluster3_H158K320_LC_tree.png](./graph/Cluster3_H158K320_LC_tree.png)
