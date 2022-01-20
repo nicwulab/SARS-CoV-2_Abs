@@ -28,5 +28,6 @@ p  <- p +
               legend.position = "right",
 	      legend.text=element_text(size=textsize,face="bold"),
 	      legend.justification='top',
+              legend.spacing.x = unit(.01, "char"),
               legend.key.size = unit(0.6,"line")) 
 ggsave('graph/Cluster3_H158K320_LC_tree.png',p, width=4, height=2, bg='white', dpi=600)
