@@ -21,7 +21,7 @@ plot_model_perform <- function(data,p_width,graphname){
           geom_bar(data=data, aes(x=Metrics, y=value, fill=Model), stat='identity', width=0.6, position=position_dodge()) +
           scale_fill_manual(values=palette,drop=FALSE,labels = c("RBD/HA","S/HA","RBD/NTD/S2")) +
           theme_cowplot(12) + ylim(0,1)+
-          theme(axis.text=element_text(size=textsize-1,face="bold",colour = 'black'),
+          theme(axis.text=element_text(size=textsize,face="bold",colour = 'black'),
                 axis.text.x=element_text(angle=90, vjust=0.5, hjust=1, colour = 'black'),
                 axis.text.y=element_text(hjust=0.5,vjust=0.5,colour = 'black'),
                 axis.title.x=element_blank(),

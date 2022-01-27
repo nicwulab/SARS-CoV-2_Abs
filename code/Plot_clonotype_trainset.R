@@ -82,9 +82,9 @@ test_df2 <- test_df %>% group_by(dataset,state)%>%
   mutate(percent = count/sum(count))
 #print the precentage of overlapped state in test set
 print(prop.table(table(test_df$state)))
-p1<-plot_hist(train_df,train_df2,train_df$clonotype,'Clonotype ID',11,24,'')
-p2<-plot_hist(val_df,val_df2,val_df$clonotype,'Clonotype ID',3.2,6.8,'')
-p3<-plot_hist(test_df,test_df2,test_df$clonotype,'Clonotype ID',5,11,'')
+p1<-plot_hist(train_df,train_df2,train_df$clonotype,'Clonotype ID',5,15,'')
+p2<-plot_hist(val_df,val_df2,val_df$clonotype,'Clonotype ID',1.33,4,'')
+p3<-plot_hist(test_df,test_df2,test_df$clonotype,'Clonotype ID',2.66,8,'')
 
 p <- ggarrange(p3,p2,p1,nrow=3,ncol=1,common.legend = TRUE,legend = 'top')
 ggsave('graph/Clonotype_distribution.png',p,height=4.5,width=3,bg='white')
