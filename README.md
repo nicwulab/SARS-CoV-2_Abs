@@ -178,17 +178,22 @@ igblastn -query result/test.fasta \
 
 ## Analysis of recurring SHM in IGHV1-58/IGKV3-20 antibodies
 1. Extracting light chain sequences from IGHV1-58/IGKV3-20 antibodies
-``python3 code/extract_IGHV1-58.py``
+``python3 code/extract_IGHV1-58_VL.py``
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
-    - Output files:
+    - Output file:
       - [./Fasta/Cluster3_H158K320_LC.pep](./Fasta/Cluster3_H158K320_LC.pep)
-      - [./result/Cluster3_H158K320_LC_class.tsv](./result/Cluster3_H158K320_LC_class.tsv)
 
 2. Multiple sequence alignment
 ``mafft Fasta/Cluster3_H158K320_LC.pep > Fasta/Cluster3_H158K320_LC.aln``
 
-3. Constructing phylogenetic tree
+3. Identifying amino acid variants at VL residues 29 and 92
+``code/extract_IGHV1-58_aa.py``
+    - Input file:
+      - [./Fasta/Cluster3_H158K320_LC.aln](./Fasta/Cluster3_H158K320_LC.aln)
+    - Output file:
+      - [./result/Cluster3_H158K320_LC_class.tsv](./result/Cluster3_H158K320_LC_class.tsv)
+4. Constructing phylogenetic tree
 ``FastTree Fasta/Cluster3_H158K320_LC.aln > result/Cluster3_H158K320_LC.tree``
 
 ## Clonotype assignment

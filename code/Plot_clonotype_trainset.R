@@ -55,7 +55,7 @@ plot_hist <- function(df,df2,column,x_lab,y1,y2,main_title){
 
 
 #-------------------------------------read dataframe--------------------------------------#
-Ab_DF <- read_excel('result/Data S2_v2.xlsx')%>% filter(clonotype != 'NA')
+Ab_DF <- read_excel('result/DataS2.xlsx')%>% filter(clonotype != 'NA')
 train_df <- Ab_DF %>% filter(dataset=='train set')
 train_clono <- train_df$clonotype
 train_df$state <- 'overalp with train set'
@@ -84,7 +84,7 @@ test_df2 <- test_df %>% group_by(dataset,state)%>%
 print(prop.table(table(test_df$state)))
 p1<-plot_hist(train_df,train_df2,train_df$clonotype,'Clonotype ID',11,24,'')
 p2<-plot_hist(val_df,val_df2,val_df$clonotype,'Clonotype ID',3.2,6.8,'')
-p3<-plot_hist(test_df,test_df2,test_df$clonotype,'Clonotype ID',5,11,'Distribution of clonotype ID')
+p3<-plot_hist(test_df,test_df2,test_df$clonotype,'Clonotype ID',5,11,'')
 
 p <- ggarrange(p3,p2,p1,nrow=3,ncol=1,common.legend = TRUE,legend = 'top')
-ggsave('graph/Clonotype_distribution.png',p,height=5,width=3.4,bg='white')
+ggsave('graph/Clonotype_distribution.png',p,height=4.5,width=3,bg='white')

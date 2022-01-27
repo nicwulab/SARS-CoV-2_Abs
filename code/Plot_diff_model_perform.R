@@ -19,10 +19,10 @@ plot_model_perform <- function(data,p_width,graphname){
   textsize <- 7
   p <-  ggplot() +
           geom_bar(data=data, aes(x=Metrics, y=value, fill=Model), stat='identity', width=0.6, position=position_dodge()) +
-          scale_fill_manual(values=palette,drop=FALSE) +
+          scale_fill_manual(values=palette,drop=FALSE,labels = c("RBD/HA","S/HA","RBD/NTD/S2")) +
           theme_cowplot(12) + ylim(0,1)+
           theme(axis.text=element_text(size=textsize-1,face="bold",colour = 'black'),
-                axis.text.x=element_text(vjust=0.5,colour = 'black'),
+                axis.text.x=element_text(angle=90, vjust=0.5, hjust=1, colour = 'black'),
                 axis.text.y=element_text(hjust=0.5,vjust=0.5,colour = 'black'),
                 axis.title.x=element_blank(),
                 axis.title.y=element_text(size=textsize,face="bold"),
@@ -34,7 +34,7 @@ plot_model_perform <- function(data,p_width,graphname){
                 legend.justification='center',
                 legend.key.size = unit(0.5,"line")) +
           ylab("Performance")
-  ggsave(graphname,p,width=p_width, height=2, bg='white', dpi=300)
+  ggsave(graphname,p,width=p_width, height=1.5, bg='white', dpi=300)
 }
 
 model_level <- c('RBD-HA','Spike-HA','RBD-NTD-S2')
@@ -42,4 +42,4 @@ metrics_level <- c('Accuracy','Precision','Recall','ROC AUC')
 model_data <- read_excel('result/model_comparison.xlsx') %>%
                 mutate(Model=factor(Model, level=model_level)) %>%
                 mutate(Metrics=factor(Metrics, level=metrics_level))
-plot_model_perform(model_data, 4,'graph/model_comparison.png')
+plot_model_perform(model_data, 3,'graph/model_comparison.png')
