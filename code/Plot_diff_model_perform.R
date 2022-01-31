@@ -38,7 +38,7 @@ plot_model_perform <- function(data,p_width,graphname){
 }
 
 model_level <- c('RBD-HA','Spike-HA','RBD-NTD-S2')
-metrics_level <- c('Accuracy','Precision','Recall','ROC AUC')
+metrics_level <- c('Accuracy','Precision','Recall','ROC AUC','PR AUC')
 model_data <- read_excel('result/model_comparison.xlsx') %>%
                 mutate(Model=factor(Model, level=model_level)) %>%
                 mutate(Metrics=factor(Metrics, level=metrics_level))
