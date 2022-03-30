@@ -1,6 +1,6 @@
 # Sequence analysis of SARS-CoV-2 antibodies
 This README describes the analyses in:   
-[A large-scale systematic survey of SARS-CoV-2 antibodies reveals recurring molecular features](https://www.biorxiv.org/content/10.1101/2021.11.26.470157v1)
+[A large-scale systematic survey reveals recurring molecular features of public antibody responses to SARS-CoV-2](https://www.cell.com/immunity/fulltext/S1074-7613(22)00142-X)
 
 ## Contents
 
