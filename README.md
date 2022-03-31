@@ -208,9 +208,9 @@ igblastn -query result/test.fasta \
 
 Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
 
-- Classifier for S vs HA: [./code/CoV_Encoder/S_HA_classifier.ipynb](code/CoV_Encoder/S_HA_classifier.ipynb)
-- Classifier for RBD vs HA: [./code/CoV_Encoder/RBD_HA_classifier.ipynb](./code/CoV_Encoder/RBD_HA_classifier.ipynb)
-- Classifier for RBD vs NTD vs S2: [./code/CoV_Encoder/RBD_S2_NTD_classifier_VH.ipynb](./code/CoV_Encoder/RBD_S2_NTD_classifier_VH.ipynb)
+  - Classifier for S vs HA: [./code/CoV_Encoder/S_HA_classifier.ipynb](code/CoV_Encoder/S_HA_classifier.ipynb)
+  - Classifier for RBD vs HA: [./code/CoV_Encoder/RBD_HA_classifier.ipynb](./code/CoV_Encoder/RBD_HA_classifier.ipynb)
+  - Classifier for RBD vs NTD vs S2: [./code/CoV_Encoder/RBD_S2_NTD_classifier_VH.ipynb](./code/CoV_Encoder/RBD_S2_NTD_classifier_VH.ipynb)
 
 - Input files:
   - [./code/CoV_Encoder/data](./code/CoV_Encoder/data)  
