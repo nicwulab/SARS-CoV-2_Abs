@@ -265,7 +265,7 @@ Deep learning model is under [CoV_Encoder](./code/CoV_Encoder)
       - ./CDRH3_seqlogo/*.png
 
 6. Plot IGHV gene usage for CDR H3 cluster 7   
-``code/plot_cluster7_Vgenes.R``   
+``Rscript code/plot_cluster7_Vgenes.R``   
     - Input file:
       - [./result/Ab_info_CDRH3_clustering.tsv](./result/Ab_info_CDRH3_clustering.tsv)
     - Output file:
