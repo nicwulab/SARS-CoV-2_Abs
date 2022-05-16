@@ -188,7 +188,7 @@ igblastn -query result/test.fasta \
 ``mafft Fasta/Cluster3_H158K320_LC.pep > Fasta/Cluster3_H158K320_LC.aln``
 
 3. Identifying amino acid variants at VL residues 29 and 92
-``code/extract_IGHV1-58_aa.py``
+``python3 code/extract_IGHV1-58_aa.py``
     - Input file:
       - [./Fasta/Cluster3_H158K320_LC.aln](./Fasta/Cluster3_H158K320_LC.aln)
     - Output file:
